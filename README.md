@@ -215,6 +215,7 @@ private void copyAssetFile2Sdcard(String assetFile)
 **官方GITHUB主页:**   [https://github.com/SmartisanTech/SmartisanOS-SDK](https://github.com/SmartisanTech/SmartisanOS-SDK)
 
 
+### MIT License
 
 ```
 MIT License
