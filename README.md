@@ -3,10 +3,11 @@
 
 ## Demo视频演示
 
+<video id="video" controls="" preload="none">
+  <source id="mp4  src="http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf">
+</video>
+
 <embed src='http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf'
 allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'>
 </embed>
 
-<video id="video" controls="" preload="none">
-  <source id="mp4  src="http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf">
-</video>
