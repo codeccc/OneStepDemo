@@ -15,7 +15,7 @@ This is a one-step demo for Smartisan OS. It implements text, link, single-pictu
 
 ##### 1、初始化OneStepHelper
 
-将demo中的 `libs/smartisanos-api-1.0.2.jar` 复制到你的项目 `/libs` 目录下,添加依赖并同步
+将[smartisanos-api-1.0.2.jar](https://github.com/codeccc/OneStepDemo/blob/master/app/libs/smartisanos-api-1.0.2.jar) 添加到你的项目 `/libs` 目录下,添加依赖并同步
 
 ##### 2、初始化OneStepHelper
 
