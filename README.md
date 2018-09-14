@@ -7,7 +7,7 @@ This is a one-step demo for Smartisan OS. It implements text, link, single-pictu
 
 ### 软件截图
 
-| ![首页](..\pics\1.png) | ![文字拖拽](..\pics\2.png) | ![多拖拖拽](..\pics\3.png) | ![链接拖拽](..\pics\4.png) |
+| ![首页](./pics/1.png) | ![文字拖拽](./pics/2.png) | ![多拖拖拽](./pics/3.png) | ![链接拖拽](./pics/4.png) |
 | ---------------------- | -------------------------- | -------------------------- | -------------------------- |
 |                        |                            |                            |                            |
 
