@@ -3,6 +3,8 @@
 
 ## Demo视频演示
 
+<iframe height=498 width=510 src='http://player.youku.com/embed/XMzgyMzQyMTM0OA==' frameborder=0 'allowfullscreen'></iframe>
+
 <video id="video" controls="" preload="none">
   <source id="mp4  src="http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf">
 </video>
