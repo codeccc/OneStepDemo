@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txt_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/smartisan_intro"
+                android:textColor="#666666"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/txt_link_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:text="@string/smartisan_offical_website"
+                android:textColor="#ff1943"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/img_single_style"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="单图拖拽"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/img_multi_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="多图拖拽"
+                android:scaleType="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

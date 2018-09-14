@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OneStep</string>
+    <string name="smartisan_intro">锤子科技是一家制造移动互联网终端设备的公司，公司的使命是用完美主义的工匠精神，打造用户体验一流的数码消费类产品（智能手机为主），改善人们的生活质量。 公司的英文名“Smartisan”，是由“smart”和“artisan”组合成的词，意思是“智能手机时代的工匠”。在缺乏创新精神和创新能力的安卓手机阵营里，锤子科技的团队格外擅长软件的图形界面和用户体验设计，并精通硬件的工业设计。 锤子科技成立于2012年5月15日，初期天使投资时公司估值5000万人民币，2013年5月第一轮正式融资结束时，资本市场估值4亿7000万人民币。2015年6月16日迅游科技向锤子科技新增出资额3000万元，投资完成后将持有锤子科技1.13%股权。</string>
+    <string name="smartisan_offical_website">https://www.smartisan.com/</string>
+</resources>
