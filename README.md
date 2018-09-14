@@ -11,6 +11,18 @@ This is a one-step demo for Smartisan OS. It implements text, link, single-pictu
 | ---------------------- | -------------------------- | -------------------------- | -------------------------- |
 |                        |                            |                            |                            |
 
+## Demo视频演示
+
+[优酷视频播放地址](http://v.youku.com/v_show/id_XMzgyMzQyMTM0OA==.html?spm=a2h3j.8428770.3416059.1)
+
+<video id="video" controls="" preload="none">
+  <source id="mp4  src="http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf">
+</video>
+
+<embed src='http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf'
+allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'>
+</embed>
+
 ### 使用教程
 
 ##### 1、初始化OneStepHelper
@@ -106,17 +118,99 @@ mOneStepHelper.showDragPopupText(View view, OnDragListener dragListener, String 
 
 
 
-## Demo视频演示
+#### 注意事项:
 
-[优酷视频播放地址](http://v.youku.com/v_show/id_XMzgyMzQyMTM0OA==.html?spm=a2h3j.8428770.3416059.1)
+##### 1、进行图片拖拽、文件拖拽时,请在`AndroidManifest.xml`申请权限
 
-<video id="video" controls="" preload="none">
-  <source id="mp4  src="http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf">
-</video>
+```java
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
 
-<embed src='http://player.youku.com/player.php/sid/XMzgyMzQyMTM0OA==/v.swf'
-allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'>
-</embed>
+##### 2、进行图片拖拽分享时,请先将图片保存到本地 , 测试保存代码示例:
+
+```java
+/**
+ * 保存目录
+ */
+private static final String SAMPLE_FILE_DIR
+        = Environment.getExternalStorageDirectory() + "/OneStepDemo/";
+/**
+ * 创建文件
+ * @param filename 文件名称
+ * @return
+ */
+private File createTestFileIfNotExists(String filename)
+{
+    File testFile = new File(SAMPLE_FILE_DIR, filename);
+    if (!testFile.exists())
+    {
+        try
+        {
+            testFile.createNewFile();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    return testFile;
+}
+```
+
+```java
+/**
+ * 将图片从assets中拷贝到sd卡中
+ * @param assetFile 文件
+ * @return
+ */
+private void copyAssetFile2Sdcard(String assetFile)
+{
+    InputStream inputStream = null;
+    OutputStream outputStream = null;
+    try
+    {
+        inputStream = getAssets().open(assetFile);
+        String destFilePath = createTestFileIfNotExists(assetFile).getAbsolutePath();
+        File f = new File(destFilePath);
+        outputStream = new FileOutputStream(f);
+        byte[] buf = new byte[1024 * 4];
+        int len = 0;
+        while ((len = inputStream.read(buf)) > 0)
+        {
+            outputStream.write(buf, 0, len);
+        }
+        outputStream.flush();
+    } catch (IOException e)
+    {
+        e.printStackTrace();
+    } finally
+    {
+        try
+        {
+            if (outputStream != null)
+            {
+                outputStream.close();
+            }
+            if (inputStream != null)
+            {
+                inputStream.close();
+            }
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+
+
+#### TODO
+
+- [ ] 接收拖拽的图片、文字、链接、文件;
+
+
+
+
 
 **官方GITHUB主页:**   [https://github.com/SmartisanTech/SmartisanOS-SDK](https://github.com/SmartisanTech/SmartisanOS-SDK)
 

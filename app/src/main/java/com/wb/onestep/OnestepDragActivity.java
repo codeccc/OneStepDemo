@@ -49,28 +49,14 @@ public class OnestepDragActivity extends AppCompatActivity implements View.OnLon
         mOneStepHelper = OneStepHelper.getInstance(OnestepDragActivity.this);
         setLongClick(mBinding.imgMultiStyle, mBinding.imgSingleStyle
                 , mBinding.txtLinkStyle, mBinding.txtTextStyle);
+        //TODO NOTICE:确保保存目录已存在
         new File(SAMPLE_FILE_DIR).mkdir();
-        try
-        {
-            Thread.sleep(1000);
-        } catch (InterruptedException e)
-        {
-            e.printStackTrace();
-        }
 
         //初始化单图拖拽预览图
-//        Glide.with(this)
-//                .load(getImageFromAssetsFile("ic_smartisan_pro2s_single.jpg"))
-//                .asBitmap()
-//                .into(mBinding.imgSingleStyle);
         mBinding.imgSingleStyle
                 .setImageBitmap(getImageFromAssetsFile("ic_smartisan_pro2s_single.jpg"));
 
         //初始化多图拖拽预览图
-//        Glide.with(this)
-//                .load(getImageFromAssetsFile(imageNames[0]))
-//                .asBitmap()
-//                .into(mBinding.imgMultiStyle);
         mBinding.imgMultiStyle
                 .setImageBitmap(getImageFromAssetsFile(imageNames[0]));
     }
@@ -137,9 +123,17 @@ public class OnestepDragActivity extends AppCompatActivity implements View.OnLon
         return true;
     }
 
+    /**
+     * 保存目录
+     */
     private static final String SAMPLE_FILE_DIR
             = Environment.getExternalStorageDirectory() + "/OneStepDemo/";
 
+    /**
+     * 创建文件
+     * @param filename 文件名称
+     * @return
+     */
     private File createTestFileIfNotExists(String filename)
     {
         File testFile = new File(SAMPLE_FILE_DIR, filename);
@@ -156,6 +150,11 @@ public class OnestepDragActivity extends AppCompatActivity implements View.OnLon
         return testFile;
     }
 
+    /**
+     * 将图片从assets中拷贝到sd卡中
+     * @param assetFile 文件
+     * @return
+     */
     private void copyAssetFile2Sdcard(String assetFile)
     {
         InputStream inputStream = null;
@@ -195,6 +194,11 @@ public class OnestepDragActivity extends AppCompatActivity implements View.OnLon
         }
     }
 
+    /**
+     * 从assets中获取图片bitmap
+     * @param fileName 文件名
+     * @return
+     */
     private Bitmap getImageFromAssetsFile(String fileName)
     {
         Bitmap image = null;
